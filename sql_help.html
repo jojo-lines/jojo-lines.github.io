@@ -10,6 +10,7 @@
 	<div>
 		<p><code>SELECT * FROM dialogue WHERE </code></p>
 		<p>Every query you run is automatically prefixed with the above string. If you don't know what it does, don't worry, it's not that important, it just means you have to type less to do a search.</p>
+		<p>Every time you load the page, every line of dialogue in the database is pre-loaded all at once. Doing an SQL query affects the data that is loaded into the table, and then filters on the table can be used to further narrow down your results. <b>Do not worry about this if you don't need to do more complicated searches.</b></p>
 		<h2>Example queries</h2>
 		<p><code>speaker = "Yoshikage Kira (8)"</code></p>
 		<p>Returns all lines where the speaker is Yoshikage Kira (8).</p>
@@ -18,7 +19,6 @@
 		<p></p>
 		<p>You can also use the OR keyword alongside or instead of the AND keyword to join together complex queries. This should be all you need to know in order to make reasonably sophisticated queries on this database.</p>
 		<p>For reference, the available row names (e.g., stuff like <code>speaker</code> and <code>chapter</code>) are <code>line_num, volume, volume_total, chapter, chapter_total, speaker, line</code></p>
-		<p>Also, don't forget that the table itself has more basic sorting features too, for further narrowing down the results of your query.</p>
 	</div>
 </body>
 </html>
