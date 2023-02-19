@@ -11,7 +11,7 @@
       //Create the database
       const xhr = new XMLHttpRequest();
       // For example: https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite
-      xhr.open('GET', 'https://github.com/jojo-lines/jojo-lines.github.io/blob/main/jojo_lines.sqlite?raw=true', true);
+      xhr.open('GET', '/jojo_lines.sqlite', true);
       xhr.responseType = 'arraybuffer';
 
       xhr.onload = e => {
