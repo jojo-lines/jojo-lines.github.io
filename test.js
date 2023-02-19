@@ -60,5 +60,13 @@ $(document).ready(function () {
     });
 });
 
-test("SELECT * FROM part8 LIMIT 500");
+function clickPress(event) {
+    if (event.key == "Enter") {
+    	test(document.getElementById("query").value);
+    	document.getElementById("query").textContent="";
+    }
+}
+
+
+test("SELECT * FROM part8 LIMIT 250");
 //console.log(a);

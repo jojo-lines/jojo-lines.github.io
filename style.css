@@ -84,8 +84,20 @@ table {
   text-align: center;
 }
 
+input {
+  padding: 6px 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 60%;
+}
+
+#Output {
+  text-align: center;
+}
+
 tfoot input {
   width: 100%;
   padding: 3px;
   box-sizing: border-box;
 }
+
