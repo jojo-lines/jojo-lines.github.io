@@ -8,62 +8,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
   <script src="/dist/sql-wasm.js"></script>
-  <script src="button.js"></script>
   <script src="test.js"></script>
   <script>
 
 </script>
   <body>
     <h1><center>JoJo's Bizarre Adventure Dialogue Database</center></h1>
-    <h2><center>Filter options</center></h2>
-    
-    <div class="tab-container">
-      <div class="tab">
-        <button class="tablinks" onclick="changeTab(event, 'StoryArcs')">Story Arcs</button>
-        <button class="tablinks" onclick="changeTab(event, 'Characters')">Characters</button>
-        <button class="tablinks" onclick="changeTab(event, 'Output')">Output</button>
-      </div>
-    </div>
-    
-    <div id="StoryArcs" class="tabcontent">
-      <div id="storyArcsp1" class="storyArcs">Part 1 Story Arcs<hr></div>
-      <div id="storyArcsp2" class="storyArcs">Part 2 Story Arcs<hr></div>
-      <div id="storyArcsp3" class="storyArcs">Part 3 Story Arcs<hr></div>
-      <div id="storyArcsp4" class="storyArcs">Part 4 Story Arcs<hr></div>
-      <div id="storyArcsp5" class="storyArcs">Part 5 Story Arcs<hr></div>
-      <div id="storyArcsp6" class="storyArcs">Part 6 Story Arcs<hr></div>
-      <div id="storyArcsp7" class="storyArcs">Part 7 Story Arcs<hr></div>
-      <div id="storyArcsp8" class="storyArcs">Part 8 Story Arcs<hr></div>
-      <div id="storyArcsp9" class="storyArcs">Part 9 Story Arcs<hr></div>
-    </div>
-    
-    <div id="Characters" class="tabcontent">
-      <div></div>
-    </div>
-    
-    <div id="Output" class="tabcontent">
-      <input id="query" type="text" title="Table is 'part8'. Available fields are line_num, volume, volume_total, chapter, chapter_total, speaker, line." placeholder="Insert SQL query here (but only if you know what you're doing)" onkeydown="clickPress(event)">
-      <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>line_num</th>
-                <th>volume (total)</th>
-                <th>chapter (total)</th>
-                <th>speaker</th>
-                <th>line</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>line_num</th>
-                <th>volume (total)</th>
-                <th>chapter (total)</th>
-                <th>speaker</th>
-                <th>line</th>
-            </tr>
-        </tfoot>
-      </table>
-    </div>
+      
+    <input id="query" type="text" title="Table is 'part8'. Available fields are line_num, volume, volume_total, chapter, chapter_total, speaker, line." placeholder="Insert SQL query here (but only if you know what you're doing)" onkeydown="clickPress(event)">
+    <table id="example" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>line_num</th>
+              <th>volume (total)</th>
+              <th>chapter (total)</th>
+              <th>speaker</th>
+              <th>line</th>
+          </tr>
+      </thead>
+      <tfoot>
+          <tr>
+              <th>line_num</th>
+              <th>volume (total)</th>
+              <th>chapter (total)</th>
+              <th>speaker</th>
+              <th>line</th>
+          </tr>
+      </tfoot>
+    </table>
   
   </body>
 </html>

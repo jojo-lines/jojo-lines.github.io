@@ -69,6 +69,5 @@ function clickPress(event) {
     }
 }
 
-
-test("SELECT * FROM part8 LIMIT 250");
+test("SELECT * FROM part8");
 //console.log(a);
