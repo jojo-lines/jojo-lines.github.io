@@ -64,10 +64,9 @@ $(document).ready(function () {
 
 function clickPress(event) {
     if (event.key == "Enter") {
-    	test(document.getElementById("query").value);
-    	document.getElementById("query").textContent="";
+    	test("SELECT * FROM dialogue WHERE " + document.getElementById("query").value);
     }
 }
 
-test("SELECT * FROM part8");
+test("SELECT * FROM dialogue");
 //console.log(a);

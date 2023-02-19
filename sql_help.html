@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>SQL Help</title>
+	  <link rel="stylesheet" type="text/css" href="style.css"> 
+	</head>
+<body>
+	<h1>SQL Help</h1>
+	<div>
+		<p><code>SELECT * FROM dialogue WHERE </code></p>
+		<p>Every query you run is automatically prefixed with the above string. If you don't know what it does, don't worry, it's not that important, it just means you have to type less to do a search.</p>
+		<h2>Example queries</h2>
+		<p><code>speaker = "Yoshikage Kira (8)"</code></p>
+		<p>Returns all lines where the speaker is Yoshikage Kira (8).</p>
+		<p><code>speaker LIKE "%Hirose%" AND chapter > 2</code></p>
+		<p>This returns all lines where the speaker's name contains 'Hirose' and the chapter is greater than 2. The '%' symbol in SQL is just a wildcard, so it means anything could be on either side of the word 'Hirose' and it would still match.</p>
+		<p></p>
+		<p>You can also use the OR keyword alongside or instead of the AND keyword to join together complex queries. This should be all you need to know in order to make reasonably sophisticated queries on this database.</p>
+		<p>For reference, the available row names (e.g., stuff like <code>speaker</code> and <code>chapter</code>) are <code>line_num, volume, volume_total, chapter, chapter_total, speaker, line</code></p>
+		<p>Also, don't forget that the table itself has more basic sorting features too, for further narrowing down the results of your query.</p>
+	</div>
+</body>
+</html>

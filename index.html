@@ -14,8 +14,9 @@
 </script>
   <body>
     <h1><center>JoJo's Bizarre Adventure Dialogue Database</center></h1>
-      
-    <input id="query" type="text" title="Table is 'part8'. Available fields are line_num, volume, volume_total, chapter, chapter_total, speaker, line." placeholder="Insert SQL query here (but only if you know what you're doing)" onkeydown="clickPress(event)">
+    <a href="sql_help.html"><center><u>Basic help on how to make SQL queries</u></center></a>
+
+    <input id="query" type="text" title="Query is prefixed with 'SELECT * FROM dialogue WHERE '. Available fields are line_num, volume, volume_total, chapter, chapter_total, speaker, line." placeholder="Type a SQL query here and press enter. (e.g., speaker = 'Yoshikage Kira (8)')" onkeydown="clickPress(event)">
     <table id="example" class="display" style="width:100%">
       <thead>
           <tr>
