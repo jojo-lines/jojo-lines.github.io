@@ -28,9 +28,11 @@ function parseData (data){
 	//create table header
 	result = data[0]["values"];
 	
+	let toAdd = [];
 	for (line of result) {
-		outputTable.row.add( [line[0], line[1] + " ("+line[2]+")", line[3] + " ("+line[4]+")", line[5], line[6] ] ).draw();
+		toAdd.push( [line[0], line[1] + " ("+line[2]+")", line[3] + " ("+line[4]+")", line[5], line[6] ] );
 	}
+	outputTable.rows.add(toAdd).draw();
 
 }
 
