@@ -2,56 +2,67 @@
   <meta charset="UTF-8">
   <title>Jojo Lines Search</title>
   <link rel="stylesheet" type="text/css" href="style.css"> 
+  <link rel="stylesheet" type="text/css" href="jquery.dataTables.min.css"> 
 </head>
 <html>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
   <script src="/dist/sql-wasm.js"></script>
   <script src="button.js"></script>
+  <script src="test.js"></script>
   <script>
-    config = {
-      locateFile: filename => `/dist/${filename}`
-    }
-    // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
-    // We must specify this locateFile function if we are loading a wasm file from anywhere other than the current html page's folder.
-    initSqlJs(config).then(function(SQL){
-      //Create the database
-      const xhr = new XMLHttpRequest();
-      // For example: https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite
-      xhr.open('GET', '/jojo_lines.sqlite', true);
-      xhr.responseType = 'arraybuffer';
 
-      xhr.onload = e => {
-        const uInt8Array = new Uint8Array(xhr.response);
-        const db = new SQL.Database(uInt8Array);
-        const contents = db.exec("SELECT * FROM part8");
-        console.log(contents);
-        // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
-      };
-      xhr.send();
-
-    });
-  </script>
+</script>
   <body>
-    <h1><center>Filter options</center></h1>
-    <section>
-      <button value="off" class="part" id="p1" onclick="enablePart(id)">Phantom Blood</button>
-      <button value="off" class="part" id="p2" onclick="enablePart(id)">Battle Tendency</button>
-      <button value="off" class="part" id="p3" onclick="enablePart(id)">Stardust Crusaders</button>
-      <button value="off" class="part" id="p4" onclick="enablePart(id)">Diamond is Unbreakable</button>
-      <button value="off" class="part" id="p5" onclick="enablePart(id)">Vento Aureo</button>
-      <button value="off" class="part" id="p6" onclick="enablePart(id)">Stone Ocean</button>
-      <button value="off" class="part" id="p7" onclick="enablePart(id)">Steel Ball Run</button>
-      <button value="off" class="part" id="p8" onclick="enablePart(id)">JoJolion</button>
-      <button value="off" class="part" id="p9" onclick="enablePart(id)">The JOJOLands</button>
-    </section>
-    <div hidden id="storyArcsp1" class="storyArcs"><center>Part 1 Story Arcs</center></div>
-    <div hidden id="storyArcsp2" class="storyArcs"><center>Part 2 Story Arcs</center></div>
-    <div hidden id="storyArcsp3" class="storyArcs"><center>Part 3 Story Arcs</center></div>
-    <div hidden id="storyArcsp4" class="storyArcs"><center>Part 4 Story Arcs</center></div>
-    <div hidden id="storyArcsp5" class="storyArcs"><center>Part 5 Story Arcs</center></div>
-    <div hidden id="storyArcsp6" class="storyArcs"><center>Part 6 Story Arcs</center></div>
-    <div hidden id="storyArcsp7" class="storyArcs"><center>Part 7 Story Arcs</center></div>
-    <div hidden id="storyArcsp8" class="storyArcs"><center>Part 8 Story Arcs</center></div>
-    <div hidden id="storyArcsp9" class="storyArcs"><center>Part 9 Story Arcs</center></div>
+    <h1><center>JoJo's Bizarre Adventure Dialogue Database</center></h1>
+    <h2><center>Filter options</center></h2>
+    
+    <div class="tab-container">
+      <div class="tab">
+        <button class="tablinks" onclick="changeTab(event, 'StoryArcs')">Story Arcs</button>
+        <button class="tablinks" onclick="changeTab(event, 'Characters')">Characters</button>
+        <button class="tablinks" onclick="changeTab(event, 'Output')">Output</button>
+      </div>
+    </div>
+    
+    <div id="StoryArcs" class="tabcontent">
+      <div id="storyArcsp1" class="storyArcs">Part 1 Story Arcs<hr></div>
+      <div id="storyArcsp2" class="storyArcs">Part 2 Story Arcs<hr></div>
+      <div id="storyArcsp3" class="storyArcs">Part 3 Story Arcs<hr></div>
+      <div id="storyArcsp4" class="storyArcs">Part 4 Story Arcs<hr></div>
+      <div id="storyArcsp5" class="storyArcs">Part 5 Story Arcs<hr></div>
+      <div id="storyArcsp6" class="storyArcs">Part 6 Story Arcs<hr></div>
+      <div id="storyArcsp7" class="storyArcs">Part 7 Story Arcs<hr></div>
+      <div id="storyArcsp8" class="storyArcs">Part 8 Story Arcs<hr></div>
+      <div id="storyArcsp9" class="storyArcs">Part 9 Story Arcs<hr></div>
+    </div>
+    
+    <div id="Characters" class="tabcontent">
+      <div></div>
+    </div>
+    
+    <div id="Output" class="tabcontent">
+      <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>line_num</th>
+                <th>volume (total)</th>
+                <th>chapter (total)</th>
+                <th>speaker</th>
+                <th>line</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>line_num</th>
+                <th>volume (total)</th>
+                <th>chapter (total)</th>
+                <th>speaker</th>
+                <th>line</th>
+            </tr>
+        </tfoot>
+      </table>
+    </div>
+  
   </body>
 </html>

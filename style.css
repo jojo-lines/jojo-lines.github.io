@@ -17,8 +17,8 @@ button.part {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 1.1vmax;
     display:inline-block;
-    width:30%;
-    height:6%;
+    width:200px;
+    height:40px;
     border-radius: 15px;
     margin-top: 5px;
 }
@@ -32,9 +32,60 @@ button.arc {
     margin-right: auto;
     min-width: 2em;
     padding: 5px 6px;
+    border-radius: 6px;
 }
 
 div.storyArcs {
   text-align: center;
   padding: 15px;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+/* Style the tab */
+.tab {
+  margin-top:10px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #e9e9ed;
+  display: inline-block;
+  text-align: center;
+}
+
+div.tab-container {
+    text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+table {
+  text-align: center;
+}
+
+tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
 }
