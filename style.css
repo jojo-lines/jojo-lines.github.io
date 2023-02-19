@@ -9,14 +9,32 @@ html {
 }
  
 section {
-    max-width:60%;
+    max-width:50%;
     margin-left: auto;
     margin-right: auto;
 }
-button {
+button.part {
     font-family: "Trebuchet MS", sans-serif;
-    max-width:60%;
+    font-size: 1.1vmax;
     display:inline-block;
     width:30%;
+    height:6%;
     border-radius: 15px;
+    margin-top: 5px;
+}
+button.arc {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1.1vmax;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 2em;
+    padding: 5px 6px;
+}
+
+div.storyArcs {
+  text-align: center;
+  padding: 15px;
 }
