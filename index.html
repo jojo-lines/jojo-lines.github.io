@@ -17,7 +17,7 @@
       xhr.onload = e => {
         const uInt8Array = new Uint8Array(xhr.response);
         const db = new SQL.Database(uInt8Array);
-        const contents = db.exec("SELECT * FROM my_table");
+        const contents = db.exec("SELECT * FROM part8");
         // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
       };
       xhr.send();
