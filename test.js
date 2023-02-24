@@ -1,4 +1,4 @@
-function test (query){
+function queryData (query){
 	config = {
 	  locateFile: filename => `/dist/${filename}`
 	}
@@ -22,6 +22,18 @@ function test (query){
 	});
 }
 
+function getStoryArc(chapter) {
+	if (chapter >= 848 && chapter <= 853) {
+	  return("Soft & Wet")
+	}
+	else if (chapter >= 854 && chapter <= 857) {
+	  return("California King Bed")
+	}
+	else if (chapter >= 858 && chapter <= 864) {
+	  return("\"Paisley Park\" and \"Born This Way\"")
+	}
+}
+
 function parseData (data){
 	var outputTable = $('#example').DataTable();
 	outputTable.clear().draw();
@@ -30,9 +42,12 @@ function parseData (data){
 	
 	let toAdd = [];
 	for (line of result) {
-		toAdd.push( [line[0], line[1] + " ("+line[2]+")", line[3] + " ("+line[4]+")", line[5], line[6] ] );
+		toAdd.push( [line[0], line[1] + " ("+line[2]+")", line[3] + " ("+line[4]+")", line[5], line[6], getStoryArc(line[4]) ] );
 	}
 	outputTable.rows.add(toAdd).draw();
+
+	$('#container').css( 'display', 'block' );
+	outputTable.columns.adjust().draw();
 
 }
 
@@ -64,9 +79,9 @@ $(document).ready(function () {
 
 function clickPress(event) {
     if (event.key == "Enter") {
-    	test("SELECT * FROM dialogue WHERE " + document.getElementById("query").value);
+    	queryData("SELECT * FROM dialogue WHERE " + document.getElementById("query").value);
     }
 }
 
-test("SELECT * FROM dialogue");
+queryData("SELECT * FROM dialogue");
 //console.log(a);
