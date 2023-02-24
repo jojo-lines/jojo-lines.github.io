@@ -74,6 +74,7 @@ $(document).ready(function () {
                     });
                 });
         },
+        "dom": '<lp<t>i>'
     });
 });
 
